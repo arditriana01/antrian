@@ -14,11 +14,33 @@ class StaffSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('staff')->insert([
-            'name' => 'Putri',
-            'active' => true,
-            'service_amount' => 0,
-            'total_service_time' => 0            
-        ]);
+        $staffData = [
+            [
+                'name' => 'Loket 1',
+                'active' => true,
+                'service_amount' => 0,
+                'total_service_time' => 0,
+                'username' => 'loket1',
+                'password' => Hash::make('loket1pass')
+            ],
+            [
+                'name' => 'Loket 2',
+                'active' => true,
+                'service_amount' => 0,
+                'total_service_time' => 0,
+                'username' => 'loket2',
+                'password' => Hash::make('loket2pass')
+            ],
+            [
+                'name' => 'Loket 3',
+                'active' => true,
+                'service_amount' => 0,
+                'total_service_time' => 0,
+                'username' => 'loket3',
+                'password' => Hash::make('loket3pass')
+            ],
+        ];
+
+        DB::table('staff')->insert($staffData);
     }
 }

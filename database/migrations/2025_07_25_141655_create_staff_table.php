@@ -17,6 +17,8 @@ return new class extends Migration
             $table->boolean('active')->default(false);
             $table->integer('service_amount');
             $table->integer('total_service_time');
+            $table->string('username')->unique();
+            $table->string('password');
             $table->timestamps();
         });
     }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
-import NavUser from '@/components/NavUser.vue';
+import NavUser from '@/components/NavStaff.vue';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
@@ -11,12 +11,17 @@ import AppLogo from './AppLogo.vue';
 const mainNavItems: NavItem[] = [
     {
         title: 'Dashboard',
-        href: '/dashboard',
+        href: '/staff/dashboard',
         icon: LayoutGrid,
     },
     {
-        title: 'Reservasi',
-        href: '/reservasi',
+        title: 'Panggil Antrian',
+        href: '/staff/panggil',
+        icon: LayoutGrid,
+    },
+    {
+        title: 'Walk-In',
+        href: '/staff/antri',
         icon: LayoutGrid,
     },
 ];
