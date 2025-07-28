@@ -10,19 +10,24 @@ Route::get('/', function () {
     return Inertia::render('Welcome');
 })->name('home');
 
+// Route for show queue
 Route::get('/display', fn () => inertia('Display'))->name('staff.display');
-// Route::get('/current-queue', [QueueServicesController::class, 'getCurrentQueue']);
 Route::get('/display-queue', [QueueServicesController::class, 'getCurrentQueue']);
+
 
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+// Route for user queue reservation
 Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/reservasi', [QueueServicesController::class, 'indexReservation'])->name('reservation.index');
     Route::post('/reservasi/store', [QueueServicesController::class, 'storeReservation'])->name('reservation.store');
 });
 
+
+// Route for staff
 Route::prefix('staff')->group(function(){
     Route::middleware('guest:staff')->group(function(){
         Route::get('/login', [StaffAuth::class, 'showLogin'])->name('staff.login');

@@ -19,6 +19,11 @@ class AuthController extends Controller
 
         if (Auth::guard('staff')->attempt($credentials)) {
             $request->session()->regenerate();
+            
+            /** @var \App\Models\Staff $staff */
+            $staff = Auth::guard('staff')->user();
+            $staff->update(['active' => 1]);
+
             return redirect()->intended(route('staff.dashboard'));
         }
 
@@ -26,12 +31,21 @@ class AuthController extends Controller
     }
 
     public function logout(Request $request)
-    {
+    {        
+        /** @var \App\Models\Staff|null $staff */
+        $staff = Auth::guard('staff')->user();
+
+        if ($staff) {
+            $staff->update(['active' => 0]);
+        }
+
         Auth::guard('staff')->logout();
+
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
         return redirect('/staff/login');
     }
+
 
 }

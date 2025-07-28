@@ -47,9 +47,10 @@ class QueueServicesController extends Controller
             'time_end' => null
         ]);
 
-        if($queueData){
-            return redirect()->route('reservation.index')->with('message', 'Berhasil');
+        if ($queueData) {
+            return back()->with('message', 'Berhasil menyimpan antrian baru');
         }
+
     }
 
     public function indexWalkin()
@@ -89,9 +90,10 @@ class QueueServicesController extends Controller
             'time_end' => null
         ]);
 
-        if($queueData){
-            return redirect()->route('walkin.index')->with('message', 'Berhasil');
+        if ($queueData) {
+            return back()->with('message', 'Berhasil menyimpan antrian baru untuk Walk-in');
         }
+
     }
 
     public function IndexNextQueue()
@@ -108,7 +110,7 @@ class QueueServicesController extends Controller
             ],
         ]);
     }
-
+    
     public function callNextQueue()
     {        
         $staff = Auth::guard('staff')->user();
@@ -178,6 +180,8 @@ class QueueServicesController extends Controller
             'message' => 'Tidak ada antrian yang tersedia.',
         ]);
     }
+
+
 
     public function finishCurrentQueue()
     {

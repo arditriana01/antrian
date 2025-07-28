@@ -69,8 +69,7 @@ const finishCurrentQueue = async () => {
           <button
             v-if="!calledQueue"
             @click="callNextQueue"
-            class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
-          >
+            class="bg-black text-white px-6 py-2 rounded hover:bg-gray-800">
           
             Panggil Antrian Berikutnya
           </button>
@@ -85,8 +84,7 @@ const finishCurrentQueue = async () => {
               <li
                 v-for="q in waitingQueues"
                 :key="q.id"
-                class="bg-white p-3 rounded shadow"
-              >
+                class="bg-white p-3 rounded shadow">
                 <p><strong>{{ q.queue_number }}</strong> - {{ q.patient_name }}</p>
               </li>
             </ul>
@@ -98,15 +96,13 @@ const finishCurrentQueue = async () => {
             <ul class="space-y-2">
               <li
                 v-if="calledQueue"
-                class="bg-blue-100 p-3 rounded shadow"
-              >
+                class="bg-blue-100 p-3 rounded shadow">
                 <p><strong>{{ calledQueue.queue_number }}</strong> - {{ calledQueue.patient_name }}</p>
 
                 <!-- Tombol Selesaikan -->
                 <button
                   @click="finishCurrentQueue"
-                  class="mt-2 bg-green-600 text-white px-4 py-1 rounded hover:bg-green-700"
-                >
+                  class="mt-2 bg-green-600 text-white px-4 py-1 rounded hover:bg-green-700">
                   Selesaikan Antrian
                 </button>
               </li>
@@ -121,8 +117,7 @@ const finishCurrentQueue = async () => {
               <li
                 v-for="q in doneQueues"
                 :key="q.id"
-                class="bg-green-100 p-3 rounded shadow"
-              >
+                class="bg-green-100 p-3 rounded shadow">
                 <p><strong>{{ q.queue_number }}</strong> - {{ q.patient_name }}</p>
               </li>
             </ul>

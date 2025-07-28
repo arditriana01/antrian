@@ -16,24 +16,24 @@ class StaffSeeder extends Seeder
     {
         $staffData = [
             [
-                'name' => 'Loket 1',
-                'active' => true,
+                'name' => 'Bram',
+                'active' => 0,
                 'service_amount' => 0,
                 'total_service_time' => 0,
                 'username' => 'loket1',
                 'password' => Hash::make('loket1pass')
             ],
             [
-                'name' => 'Loket 2',
-                'active' => true,
+                'name' => 'Yuka',
+                'active' => 0,
                 'service_amount' => 0,
                 'total_service_time' => 0,
                 'username' => 'loket2',
                 'password' => Hash::make('loket2pass')
             ],
             [
-                'name' => 'Loket 3',
-                'active' => true,
+                'name' => 'Josh',
+                'active' => 0,
                 'service_amount' => 0,
                 'total_service_time' => 0,
                 'username' => 'loket3',

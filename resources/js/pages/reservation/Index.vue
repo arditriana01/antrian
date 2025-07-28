@@ -32,8 +32,8 @@ const handleSubmit = () =>{
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="p-4">
-            <div v-if="page.props.flash?.message" class="alert mb-4">
-                {{ page.props.flash?.message }}
+            <div v-if="page.props.flash?.message" class="mb-4 rounded-lg border-l-4 border-green-500 bg-green-100 px-4 py-3 text-green-700 shadow">                
+                <p>{{ page.props.flash.message }}</p>
             </div>
             
             <form @submit.prevent="handleSubmit" class="w-8/12 space-y-4">

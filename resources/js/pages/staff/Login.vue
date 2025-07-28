@@ -42,7 +42,7 @@ const submit = () => {
 
             <input v-model="form.password" type="password" placeholder="Password" class="border p-2 w-full mb-2" />
             
-            <button class="bg-blue-600 text-white px-4 py-2 w-full">Login</button>            
+            <button class="bg-black text-white px-4 py-2 w-full">Login</button>            
         </form>
 
         <div v-if="form.errors.username" class="text-red-600 mt-2">{{ form.errors.username }}</div>

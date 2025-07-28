@@ -20,7 +20,7 @@ const mainNavItems: NavItem[] = [
         icon: LayoutGrid,
     },
     {
-        title: 'Walk-In',
+        title: 'Antrian Walk-In',
         href: '/staff/antri',
         icon: LayoutGrid,
     },
